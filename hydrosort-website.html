@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hydrosort - Solusi Pemilahan Sampah Sungai Cerdas</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #f0f9ff;
+            color: #0f172a;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+        }
+        canvas {
+            touch-action: none;
+            user-select: none;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-sky-200 selection:text-sky-900">
+
+    <!-- Navbar -->
+    <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-sky-100 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-2.5">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-sky-500 to-emerald-500 flex items-center justify-center text-white font-extrabold text-xl shadow-md">
+                    H
+                </div>
+                <span class="font-extrabold text-xl tracking-tight text-slate-800">Hydro<span class="text-sky-600">sort</span></span>
+            </div>
+            <div class="hidden md:flex items-center gap-8 text-sm font-semibold text-slate-600">
+                <a href="#tentang" class="hover:text-sky-600 transition">Tentang Sistem</a>
+                <a href="#cara-kerja" class="hover:text-sky-600 transition">Alur Kerja</a>
+                <a href="#kategori-sampah" class="hover:text-sky-600 transition">Kategori Sampah</a>
+                <a href="#simulasi" class="px-4 py-2 rounded-lg bg-sky-600 text-white hover:bg-sky-700 transition shadow-sm">Mainkan Simulasi</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="tentang" class="relative overflow-hidden bg-gradient-to-b from-sky-900 via-sky-800 to-teal-800 text-white py-20 lg:py-28">
+        <div class="absolute inset-0 opacity-15 bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:20px_20px]"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <span class="inline-block py-1.5 px-4 rounded-full bg-sky-500/20 border border-sky-400/30 text-sky-200 text-xs font-bold uppercase tracking-wider mb-6">
+                Inovasi Teknologi Lingkungan & Sungai
+            </span>
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight max-w-4xl mx-auto mb-6">
+                Menjaga Ekosistem Sungai dengan Pemilahan Sampah Otomatis <span class="text-emerald-400">Hydrosort</span>
+            </h1>
+            <p class="text-lg sm:text-xl text-sky-100 max-w-2xl mx-auto mb-10 leading-relaxed">
+                Sistem penyaringan terpadu yang menangkap sampah terbawa arus sungai, memindahkannya melalui <em>conveyor belt</em>, dan memilahnya ke wadah daur ulang yang tepat.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#simulasi" class="px-8 py-4 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-extrabold text-base shadow-lg shadow-emerald-500/30 transition transform hover:-translate-y-0.5">
+                    Coba Game Simulasi Sekarang
+                </a>
+                <a href="#cara-kerja" class="px-8 py-4 rounded-xl bg-white/10 hover:bg-white/20 border border-white/20 text-white font-bold text-base transition">
+                    Pelajari Cara Kerja
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Cara Kerja Section -->
+    <section id="cara-kerja" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-2xl mx-auto mb-16">
+            <h2 class="text-3xl font-extrabold text-slate-900 mb-4">Bagaimana Hydrosort Bekerja?</h2>
+            <p class="text-slate-600">Tiga tahapan utama untuk membersihkan aliran sungai sekaligus memudahkan proses daur ulang di darat.</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+            <!-- Step 1 -->
+            <div class="glass-card rounded-2xl p-8 shadow-sm border border-sky-100 hover:shadow-md transition">
+                <div class="w-12 h-12 rounded-xl bg-sky-100 text-sky-600 flex items-center justify-center font-extrabold text-xl mb-6">1</div>
+                <h3 class="text-xl font-bold text-slate-900 mb-3">Penangkapan Arus Sungai</h3>
+                <p class="text-slate-600 text-sm leading-relaxed">
+                    Penghadang dan kincir penyaring Hydrosort dipasang di titik strategis sungai untuk mencegat sampah mengapung yang terbawa arus air tanpa menghambat aliran sungai.
+                </p>
+            </div>
+            <!-- Step 2 -->
+            <div class="glass-card rounded-2xl p-8 shadow-sm border border-sky-100 hover:shadow-md transition">
+                <div class="w-12 h-12 rounded-xl bg-teal-100 text-teal-600 flex items-center justify-center font-extrabold text-xl mb-6">2</div>
+                <h3 class="text-xl font-bold text-slate-900 mb-3">Transfer ke Conveyor Belt</h3>
+                <p class="text-slate-600 text-sm leading-relaxed">
+                    Sampah yang terkumpul di unit Hydrosort diangkat secara berkala ke atas sabuk berjalan (<em>conveyor belt</em>) menuju stasiun pemilahan di tepi sungai.
+                </p>
+            </div>
+            <!-- Step 3 -->
+            <div class="glass-card rounded-2xl p-8 shadow-sm border border-sky-100 hover:shadow-md transition">
+                <div class="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center font-extrabold text-xl mb-6">3</div>
+                <h3 class="text-xl font-bold text-slate-900 mb-3">Pemilahan Sesuai Jenis</h3>
+                <p class="text-slate-600 text-sm leading-relaxed">
+                    Operator atau sistem pemilah mengarahkan setiap sampah ke wadah spesifik (Plastik, Organik, Medis/B3, dan Logam) agar tidak terjadi kontaminasi silang.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Simulasi Interaktif Section -->
+    <section id="simulasi" class="py-16 bg-slate-900 text-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
+                <div>
+                    <span class="text-emerald-400 font-bold text-xs uppercase tracking-wider">Simulasi Interaktif</span>
+                    <h2 class="text-3xl font-extrabold mt-1">Stasiun Pemilahan Hydrosort</h2>
+                    <p class="text-slate-400 text-sm mt-2 max-w-2xl">
+                        Bantu memilah sampah yang terangkat dari sungai! <strong>Seret (Drag)</strong> sampah ke wadah yang sesuai, atau <strong>Klik sampah lalu klik wadahnya</strong>, atau tekan tombol angka <strong>[1] [2] [3] [4]</strong> untuk sampah terdepan di conveyor belt.
+                    </p>
+                </div>
+                <div class="flex items-center gap-3">
+                    <button id="btn-sound" class="px-4 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 border border-slate-700 text-xs font-bold text-slate-200 transition">
+                        🔊 Suara: Aktif
+                    </button>
+                    <button id="btn-restart" class="px-4 py-2 rounded-lg bg-sky-600 hover:bg-sky-500 text-xs font-bold text-white transition">
+                        ↻ Ulangi Simulasi
+                    </button>
+                </div>
+            </div>
+
+            <!-- HUD Stats -->
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-4">
+                <div class="bg-slate-800/80 border border-slate-700 rounded-xl p-4">
+                    <div class="text-xs text-slate-400 font-semibold">Skor Pemilahan</div>
+                    <div id="hud-score" class="text-2xl font-extrabold text-emerald-400 mt-0.5">0</div>
+                </div>
+                <div class="bg-slate-800/80 border border-slate-700 rounded-xl p-4">
+                    <div class="text-xs text-slate-400 font-semibold">Kombo Beruntun</div>
+                    <div id="hud-combo" class="text-2xl font-extrabold text-amber-400 mt-0.5">0x</div>
+                </div>
+                <div class="bg-slate-800/80 border border-slate-700 rounded-xl p-4">
+                    <div class="text-xs text-slate-400 font-semibold">Sampah Terpilah</div>
+                    <div id="hud-sorted" class="text-2xl font-extrabold text-sky-400 mt-0.5">0</div>
+                </div>
+                <div class="bg-slate-800/80 border border-slate-700 rounded-xl p-4">
+                    <div class="text-xs text-slate-400 font-semibold">Integritas Lingkungan</div>
+                    <div id="hud-health" class="text-2xl font-extrabold text-rose-400 mt-0.5">100%</div>
+                </div>
+            </div>
+
+            <!-- Game Canvas Wrapper -->
+            <div class="relative rounded-2xl overflow-hidden border-2 border-slate-700 shadow-2xl bg-slate-950">
+                <canvas id="hydrosortCanvas" width="1000" height="540" class="w-full h-auto block"></canvas>
+
+                <!-- Start / Game Over Overlay -->
+                <div id="game-overlay" class="absolute inset-0 bg-slate-950/85 backdrop-blur-sm flex flex-col items-center justify-center p-6 text-center">
+                    <div id="overlay-badge" class="px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 text-xs font-bold mb-3">
+                        SIAP BEROPERASI
+                    </div>
+                    <h3 id="overlay-title" class="text-3xl sm:text-4xl font-extrabold text-white mb-3">
+                        Mulai Operasi Hydrosort
+                    </h3>
+                    <p id="overlay-desc" class="text-slate-300 max-w-md text-sm sm:text-base mb-8 leading-relaxed">
+                        Arus sungai membawa berbagai limbah. Tangkap dengan Hydrosort dan pilah ke 4 wadah: <strong>[1] Plastik</strong>, <strong>[2] Organik</strong>, <strong>[3] Medis</strong>, dan <strong>[4] Logam</strong> sebelum jatuh di ujung conveyor!
+                    </p>
+                    <button id="btn-start" class="px-8 py-4 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-extrabold text-base shadow-lg shadow-emerald-500/25 transition transform hover:scale-105">
+                        Jalankan Mesin Hydrosort
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kategori Sampah Section -->
+    <section id="kategori-sampah" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-2xl mx-auto mb-14">
+            <h2 class="text-3xl font-extrabold text-slate-900 mb-4">Panduan Kategori Pemilahan</h2>
+            <p class="text-slate-600">Kenali empat kategori utama sampah yang disaring oleh unit Hydrosort di dalam simulasi.</p>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="bg-white rounded-2xl p-6 border-t-4 border-blue-500 shadow-sm">
+                <div class="text-3xl mb-3">🧴</div>
+                <h3 class="font-bold text-lg text-slate-900">1. Sampah Plastik</h3>
+                <p class="text-xs font-semibold text-blue-600 mb-2">Wadah Biru • Tombol [1]</p>
+                <p class="text-sm text-slate-600">Botol minuman PET, kantong kresek, gelas plastik, dan kemasan makanan sekali pakai.</p>
+            </div>
+            <div class="bg-white rounded-2xl p-6 border-t-4 border-emerald-500 shadow-sm">
+                <div class="text-3xl mb-3">🍂</div>
+                <h3 class="font-bold text-lg text-slate-900">2. Sampah Organik</h3>
+                <p class="text-xs font-semibold text-emerald-600 mb-2">Wadah Hijau • Tombol [2]</p>
+                <p class="text-sm text-slate-600">Ranting pohon, dedaunan, sisa buah/sayuran, dan limbah alami yang mudah terurai menjadi kompos.</p>
+            </div>
+            <div class="bg-white rounded-2xl p-6 border-t-4 border-rose-500 shadow-sm">
+                <div class="text-3xl mb-3">😷</div>
+                <h3 class="font-bold text-lg text-slate-900">3. Sampah Medis / B3</h3>
+                <p class="text-xs font-semibold text-rose-600 mb-2">Wadah Merah • Tombol [3]</p>
+                <p class="text-sm text-slate-600">Masker bekas, botol obat, sarung tangan medis, dan limbah berbahaya yang butuh penanganan khusus.</p>
+            </div>
+            <div class="bg-white rounded-2xl p-6 border-t-4 border-amber-500 shadow-sm">
+                <div class="text-3xl mb-3">🥫</div>
+                <h3 class="font-bold text-lg text-slate-900">4. Sampah Logam</h3>
+                <p class="text-xs font-semibold text-amber-600 mb-2">Wadah Kuning • Tombol [4]</p>
+                <p class="text-sm text-slate-600">Kaleng minuman aluminium, tutup botol logam, dan potongan besi ringan yang bernilai daur ulang tinggi.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 text-slate-400 py-10 border-t border-slate-800 text-center text-sm">
+        <div class="max-w-7xl mx-auto px-4">
+            <p class="font-bold text-white mb-1">Hydrosort — Sistem Pemilahan Sampah Sungai Cerdas</p>
+            <p>Dikembangkan sebagai media edukasi interaktif & simulasi teknologi pembersihan sungai.</p>
+        </div>
+    </footer>
+
+    <script>
+        /**
+         * SoundController: Menghasilkan efek suara sintetis menggunakan Web Audio API
+         * tanpa membutuhkan file audio eksternal.
+         */
+        class SoundController {
+            constructor() {
+                this.enabled = true;
+                this.ctx = null;
+            }
+
+            init() {
+                if (!this.ctx) {
+                    const AudioContext = window.AudioContext || window.webkitAudioContext;
+                    this.ctx = new AudioContext();
+                }
+                if (this.ctx.state === 'suspended') {
+                    this.ctx.resume();
+                }
+            }
+
+            playTone(freq, type, duration, vol = 0.12) {
+                if (!this.enabled) return;
+                this.init();
+                const osc = this.ctx.createOscillator();
+                const gain = this.ctx.createGain();
+                osc.type = type;
+                osc.frequency.setValueAtTime(freq, this.ctx.currentTime);
+                gain.gain.setValueAtTime(vol, this.ctx.currentTime);
+                gain.gain.exponentialRampToValueAtTime(0.001, this.ctx.currentTime + duration);
+                osc.connect(gain);
+                gain.connect(this.ctx.destination);
+                osc.start();
+                osc.stop(this.ctx.currentTime + duration);
+            }
+
+            playCatch() {
+                this.playTone(320, 'sine', 0.12, 0.08);
+            }
+
+            playSuccess(combo) {
+                const base = 440 + Math.min(combo * 30, 300);
+                this.playTone(base, 'triangle', 0.15, 0.15);
+                setTimeout(() => this.playTone(base * 1.25, 'sine', 0.2, 0.12), 60);
+            }
+
+            playError() {
+                this.playTone(150, 'sawtooth', 0.28, 0.15);
+            }
+        }
+
+        /**
+         * HydrosortGame: Mengatur simulasi aliran sungai, unit penyaring Hydrosort,
+         * pergerakan conveyor belt, dan interaksi pemilahan sampah ke 4 wadah.
+         */
+        class HydrosortGame {
+            constructor(canvasId) {
+                this.canvas = document.getElementById(canvasId);
+                this.ctx = this.canvas.getContext('2d');
+                this.sound = new SoundController();
+
+                // Definisi 4 Kategori Sampah & Wadah
+                this.categories = [
+                    { id: 'plastik', label: 'PLASTIK [1]', key: '1', color: '#3b82f6', dark: '#1d4ed8', items: ['🧴', '🛍️', '🥤'] },
+                    { id: 'organik', label: 'ORGANIK [2]', key: '2', color: '#10b981', dark: '#047857', items: ['🍂', '🍌', '🌿'] },
+                    { id: 'medis',   label: 'MEDIS [3]',   key: '3', color: '#f43f5e', dark: '#be123c', items: ['😷', '💊', '🧤'] },
+                    { id: 'logam',   label: 'LOGAM [4]',   key: '4', color: '#f59e0b', dark: '#b45309', items: ['🥫', '⚙️', '🔩'] }
+                ];
+
+                // Koordinat tata letak pada Canvas (1000 x 540)
+                this.riverZone = { x: 0, y: 120, w: 300, h: 320 };
+                this.hydrosortWheel = { x: 300, y: 270, r: 58, angle: 0 };
+                this.belt = { x: 330, y: 230, w: 590, h: 80, offset: 0 };
+
+                // Posisi 4 Wadah Pemilahan di bawah Conveyor Belt
+                this.bins = this.categories.map((cat, idx) => ({
+                    ...cat,
+                    x: 350 + idx * 145,
+                    y: 385,
+                    w: 125,
+                    h: 125,
+                    pulse: 0
+                }));
+
+                this.resetState();
+                this.bindEvents();
+                this.drawStaticScene();
+            }
+
+            resetState() {
+                this.running = false;
+                this.score = 0;
+                this.combo = 0;
+                this.sortedCount = 0;
+                this.health = 100;
+                this.riverTrash = [];
+                this.beltTrash = [];
+                this.particles = [];
+                this.floatingTexts = [];
+                this.selectedTrash = null;
+                this.draggingTrash = null;
+                this.spawnTimer = 0;
+                this.waveOffset = 0;
+                this.updateHUD();
+            }
+
+            start() {
+                this.sound.init();
+                this.resetState();
+                this.running = true;
+                document.getElementById('game-overlay').classList.add('hidden');
+                this.lastTime = performance.now();
+                requestAnimationFrame((t) => this.loop(t));
+            }
+
+            gameOver() {
+                this.running = false;
+                const overlay = document.getElementById('game-overlay');
+                document.getElementById('overlay-badge').textContent = 'SIMULASI SELESAI';
+                document.getElementById('overlay-title').textContent = `Skor Akhir: ${this.score}`;
+                document.getElementById('overlay-desc').innerHTML =
+                    `Anda berhasil memilah <strong>${this.sortedCount} sampah</strong> dari aliran sungai dengan kombo tertinggi! Klik tombol di bawah untuk mengulang simulasi.`;
+                document.getElementById('btn-start').textContent = 'Mainkan Lagi';
+                overlay.classList.remove('hidden');
+            }
+
+            updateHUD() {
+                document.getElementById('hud-score').textContent = this.score;
+                document.getElementById('hud-combo').textContent = `${this.combo}x`;
+                document.getElementById('hud-sorted').textContent = this.sortedCount;
+                document.getElementById('hud-health').textContent = `${Math.max(0, this.health)}%`;
+            }
+
+            spawnRiverTrash() {
+                const cat = this.categories[Math.floor(Math.random() * this.categories.length)];
+                const emoji = cat.items[Math.floor(Math.random() * cat.items.length)];
+                this.riverTrash.push({
+                    category: cat.id,
+                    emoji: emoji,
+                    x: -20,
+                    y: this.riverZone.y + 50 + Math.random() * (this.riverZone.h - 100),
+                    speed: 95 + Math.min(this.sortedCount * 1.5, 90),
+                    bobPhase: Math.random() * Math.PI * 2
+                });
+            }
+
+            addParticles(x, y, color) {
+                for (let i = 0; i < 14; i++) {
+                    const angle = (Math.PI * 2 * i) / 14;
+                    const speed = 60 + Math.random() * 110;
+                    this.particles.push({
+                        x, y,
+                        vx: Math.cos(angle) * speed,
+                        vy: Math.sin(angle) * speed,
+                        life: 0.55,
+                        color
+                    });
+                }
+            }
+
+            addFloatingText(x, y, text, color) {
+                this.floatingTexts.push({ x, y, text, color, life: 0.9 });
+            }
+
+            sortTrashToBin(trashItem, bin) {
+                const idx = this.beltTrash.indexOf(trashItem);
+                if (idx === -1) return;
+                this.beltTrash.splice(idx, 1);
+
+                if (this.selectedTrash === trashItem) this.selectedTrash = null;
+                if (this.draggingTrash === trashItem) this.draggingTrash = null;
+
+                bin.pulse = 1.0;
+
+                if (trashItem.category === bin.id) {
+                    this.combo++;
+                    this.sortedCount++;
+                    const gained = 10 + Math.min(this.combo * 2, 20);
+                    this.score += gained;
+                    this.sound.playSuccess(this.combo);
+                    this.addParticles(bin.x + bin.w / 2, bin.y + 20, bin.color);
+                    this.addFloatingText(bin.x + bin.w / 2, bin.y, `+${gained}`, '#34d399');
+                } else {
+                    this.combo = 0;
+                    this.health -= 15;
+                    this.sound.playError();
+                    this.addParticles(bin.x + bin.w / 2, bin.y + 20, '#f43f5e');
+                    this.addFloatingText(bin.x + bin.w / 2, bin.y, 'Salah Wadah!', '#fb7185');
+                }
+
+                this.updateHUD();
+                if (this.health <= 0) this.gameOver();
+            }
+
+            getCanvasCoords(e) {
+                const rect = this.canvas.getBoundingClientRect();
+                const scaleX = this.canvas.width / rect.width;
+                const scaleY = this.canvas.height / rect.height;
+                const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+                const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+                return {
+                    x: (clientX - rect.left) * scaleX,
+                    y: (clientY - rect.top) * scaleY
+                };
+            }
+
+            bindEvents() {
+                document.getElementById('btn-start').addEventListener('click', () => this.start());
+                document.getElementById('btn-restart').addEventListener('click', () => this.start());
+                document.getElementById('btn-sound').addEventListener('click', (e) => {
+                    this.sound.enabled = !this.sound.enabled;
+                    e.target.textContent = this.sound.enabled ? '🔊 Suara: Aktif' : '🔇 Suara: Mati';
+                });
+
+                // Kontrol Keyboard [1], [2], [3], [4] untuk sampah terdepan di conveyor belt
+                window.addEventListener('keydown', (e) => {
+                    if (!this.running) return;
+                    const keyIndex = ['1', '2', '3', '4'].indexOf(e.key);
+                    if (keyIndex !== -1 && this.beltTrash.length > 0) {
+                        // Pilih sampah yang terpilih atau yang posisinya paling kanan (terdepan)
+                        const target = this.selectedTrash || this.beltTrash.reduce((a, b) => (a.x > b.x ? a : b));
+                        this.sortTrashToBin(target, this.bins[keyIndex]);
+                    }
+                });
+
+                // Pointer Down (Klik atau mulai Drag)
+                const onDown = (e) => {
+                    if (!this.running) return;
+                    const pos = this.getCanvasCoords(e);
+
+                    // Cek apakah mengklik salah satu sampah di conveyor belt
+                    for (let i = this.beltTrash.length - 1; i >= 0; i--) {
+                        const t = this.beltTrash[i];
+                        if (Math.hypot(pos.x - t.x, pos.y - t.y) <= 34) {
+                            this.selectedTrash = t;
+                            this.draggingTrash = t;
+                            return;
+                        }
+                    }
+
+                    // Jika sudah ada sampah terpilih dan user mengklik wadah
+                    if (this.selectedTrash) {
+                        for (const bin of this.bins) {
+                            if (pos.x >= bin.x && pos.x <= bin.x + bin.w && pos.y >= bin.y && pos.y <= bin.y + bin.h) {
+                                this.sortTrashToBin(this.selectedTrash, bin);
+                                return;
+                            }
+                        }
+                    }
+                };
+
+                const onMove = (e) => {
+                    if (!this.running || !this.draggingTrash) return;
+                    e.preventDefault();
+                    const pos = this.getCanvasCoords(e);
+                    this.draggingTrash.dragX = pos.x;
+                    this.draggingTrash.dragY = pos.y;
+                };
+
+                const onUp = () => {
+                    if (!this.running || !this.draggingTrash) return;
+                    const t = this.draggingTrash;
+                    const dropX = t.dragX ?? t.x;
+                    const dropY = t.dragY ?? t.y;
+
+                    for (const bin of this.bins) {
+                        if (dropX >= bin.x && dropX <= bin.x + bin.w && dropY >= bin.y && dropY <= bin.y + bin.h) {
+                            this.sortTrashToBin(t, bin);
+                            break;
+                        }
+                    }
+                    t.dragX = null;
+                    t.dragY = null;
+                    this.draggingTrash = null;
+                };
+
+                this.canvas.addEventListener('mousedown', onDown);
+                window.addEventListener('mousemove', onMove);
+                window.addEventListener('mouseup', onUp);
+
+                this.canvas.addEventListener('touchstart', onDown, { passive: false });
+                window.addEventListener('touchmove', onMove, { passive: false });
+                window.addEventListener('touchend', onUp);
+            }
+
+            update(dt) {
+                this.waveOffset += dt * 70;
+                this.hydrosortWheel.angle += dt * 2.4;
+
+                const beltSpeed = 62 + Math.min(this.sortedCount * 1.4, 75);
+                this.belt.offset = (this.belt.offset + beltSpeed * dt) % 40;
+
+                // Spawn sampah baru di sungai
+                this.spawnTimer -= dt;
+                if (this.spawnTimer <= 0) {
+                    this.spawnRiverTrash();
+                    this.spawnTimer = Math.max(1.15, 2.5 - this.sortedCount * 0.03);
+                }
+
+                // Update sampah yang hanyut di sungai menuju Hydrosort
+                for (let i = this.riverTrash.length - 1; i >= 0; i--) {
+                    const rt = this.riverTrash[i];
+                    rt.x += rt.speed * dt;
+                    rt.bobPhase += dt * 5;
+
+                    // Saat menyentuh penyaring Hydrosort, pindahkan ke Conveyor Belt
+                    if (rt.x >= this.hydrosortWheel.x - 20) {
+                        this.riverTrash.splice(i, 1);
+                        this.sound.playCatch();
+                        this.beltTrash.push({
+                            category: rt.category,
+                            emoji: rt.emoji,
+                            x: this.belt.x + 25,
+                            y: this.belt.y + this.belt.h / 2,
+                            dragX: null,
+                            dragY: null
+                        });
+                    }
+                }
+
+                // Update sampah yang berjalan di atas Conveyor Belt
+                for (let i = this.beltTrash.length - 1; i >= 0; i--) {
+                    const bt = this.beltTrash[i];
+                    if (bt !== this.draggingTrash) {
+                        bt.x += beltSpeed * dt;
+                    }
+
+                    // Jika sampah melewati ujung conveyor belt tanpa dipilah
+                    if (bt.x > this.belt.x + this.belt.w - 10) {
+                        if (this.selectedTrash === bt) this.selectedTrash = null;
+                        if (this.draggingTrash === bt) this.draggingTrash = null;
+                        this.beltTrash.splice(i, 1);
+                        this.combo = 0;
+                        this.health -= 15;
+                        this.sound.playError();
+                        this.addFloatingText(this.belt.x + this.belt.w, this.belt.y, 'Terlewat!', '#fb7185');
+                        this.updateHUD();
+                        if (this.health <= 0) {
+                            this.gameOver();
+                            return;
+                        }
+                    }
+                }
+
+                // Animasi pulse wadah
+                for (const bin of this.bins) {
+                    if (bin.pulse > 0) bin.pulse = Math.max(0, bin.pulse - dt * 3);
+                }
+
+                // Update partikel
+                for (let i = this.particles.length - 1; i >= 0; i--) {
+                    const p = this.particles[i];
+                    p.x += p.vx * dt;
+                    p.y += p.vy * dt;
+                    p.life -= dt;
+                    if (p.life <= 0) this.particles.splice(i, 1);
+                }
+
+                // Update teks melayang
+                for (let i = this.floatingTexts.length - 1; i >= 0; i--) {
+                    const ft = this.floatingTexts[i];
+                    ft.y -= 35 * dt;
+                    ft.life -= dt;
+                    if (ft.life <= 0) this.floatingTexts.splice(i, 1);
+                }
+            }
+
+            drawStaticScene() {
+                const ctx = this.ctx;
+                ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+
+                // Latar fasilitas pengolahan
+                ctx.fillStyle = '#0f172a';
+                ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
+
+                // Area Aliran Sungai (Kiri)
+                const riverGrad = ctx.createLinearGradient(0, this.riverZone.y, 0, this.riverZone.y + this.riverZone.h);
+                riverGrad.addColorStop(0, '#0284c7');
+                riverGrad.addColorStop(1, '#0369a1');
+                ctx.fillStyle = riverGrad;
+                ctx.fillRect(this.riverZone.x, this.riverZone.y, this.riverZone.w, this.riverZone.h);
+
+                // Garis arus sungai animasi
+                ctx.strokeStyle = 'rgba(186, 230, 253, 0.35)';
+                ctx.lineWidth = 3;
+                for (let row = 0; row < 5; row++) {
+                    const y = this.riverZone.y + 40 + row * 60;
+                    ctx.beginPath();
+                    for (let x = 0; x < this.riverZone.w; x += 20) {
+                        const waveY = y + Math.sin((x + this.waveOffset) * 0.05) * 4;
+                        if (x === 0) ctx.moveTo(x, waveY);
+                        else ctx.lineTo(x, waveY);
+                    }
+                    ctx.stroke();
+                }
+
+                // Label Sungai
+                ctx.fillStyle = '#e0f2fe';
+                ctx.font = 'bold 13px Plus Jakarta Sans, sans-serif';
+                ctx.fillText('ALIRAN SUNGAI →', 24, this.riverZone.y + 26);
+
+                // Struktur Conveyor Belt
+                ctx.fillStyle = '#334155';
+                ctx.beginPath();
+                ctx.roundRect(this.belt.x, this.belt.y, this.belt.w, this.belt.h, 14);
+                ctx.fill();
+                ctx.strokeStyle = '#64748b';
+                ctx.lineWidth = 3;
+                ctx.stroke();
+
+                // Garis bergerak pada Conveyor Belt
+                ctx.strokeStyle = '#475569';
+                ctx.lineWidth = 3;
+                for (let x = this.belt.x + 20 + this.belt.offset; x < this.belt.x + this.belt.w - 15; x += 40) {
+                    ctx.beginPath();
+                    ctx.moveTo(x, this.belt.y + 10);
+                    ctx.lineTo(x + 12, this.belt.y + this.belt.h / 2);
+                    ctx.lineTo(x, this.belt.y + this.belt.h - 10);
+                    ctx.stroke();
+                }
+
+                // Label Conveyor Belt
+                ctx.fillStyle = '#94a3b8';
+                ctx.font = 'bold 12px Plus Jakarta Sans, sans-serif';
+                ctx.fillText('CONVEYOR BELT PEMILAHAN (Seret atau Klik Sampah ke Wadah)', this.belt.x + 20, this.belt.y - 12);
+
+                // Unit Penyaring Hydrosort (Roda & Penghadang)
+                ctx.save();
+                ctx.translate(this.hydrosortWheel.x, this.hydrosortWheel.y);
+                ctx.rotate(this.hydrosortWheel.angle);
+                ctx.fillStyle = '#0d9488';
+                ctx.beginPath();
+                ctx.arc(0, 0, this.hydrosortWheel.r, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.strokeStyle = '#5eead4';
+                ctx.lineWidth = 4;
+                ctx.stroke();
+
+                // Bilah penyaring kincir Hydrosort
+                for (let i = 0; i < 6; i++) {
+                    ctx.rotate(Math.PI / 3);
+                    ctx.fillStyle = '#ccfbf1';
+                    ctx.fillRect(-4, -this.hydrosortWheel.r + 6, 8, this.hydrosortWheel.r * 2 - 12);
+                }
+                ctx.restore();
+
+                // Badge label unit Hydrosort
+                ctx.fillStyle = '#14b8a6';
+                ctx.beginPath();
+                ctx.roundRect(this.hydrosortWheel.x - 54, this.hydrosortWheel.y - 86, 108, 24, 6);
+                ctx.fill();
+                ctx.fillStyle = '#042f2e';
+                ctx.font = 'extrabold 11px Plus Jakarta Sans, sans-serif';
+                ctx.textAlign = 'center';
+                ctx.fillText('UNIT HYDROSORT', this.hydrosortWheel.x, this.hydrosortWheel.y - 70);
+                ctx.textAlign = 'left';
+
+                // 4 Wadah Pemilahan
+                for (const bin of this.bins) {
+                    const scale = 1 + bin.pulse * 0.08;
+                    ctx.save();
+                    ctx.translate(bin.x + bin.w / 2, bin.y + bin.h / 2);
+                    ctx.scale(scale, scale);
+                    ctx.translate(-(bin.x + bin.w / 2), -(bin.y + bin.h / 2));
+
+                    ctx.fillStyle = bin.dark;
+                    ctx.beginPath();
+                    ctx.roundRect(bin.x, bin.y, bin.w, bin.h, 16);
+                    ctx.fill();
+
+                    ctx.strokeStyle = bin.color;
+                    ctx.lineWidth = 3;
+                    ctx.stroke();
+
+                    // Tutup atas wadah
+                    ctx.fillStyle = bin.color;
+                    ctx.beginPath();
+                    ctx.roundRect(bin.x + 8, bin.y + 10, bin.w - 16, 26, 8);
+                    ctx.fill();
+
+                    ctx.fillStyle = '#ffffff';
+                    ctx.font = 'bold 12px Plus Jakarta Sans, sans-serif';
+                    ctx.textAlign = 'center';
+                    ctx.fillText(bin.label, bin.x + bin.w / 2, bin.y + 27);
+
+                    ctx.font = '32px serif';
+                    ctx.fillText(bin.items[0], bin.x + bin.w / 2, bin.y + 82);
+                    ctx.restore();
+                }
+                ctx.textAlign = 'left';
+            }
+
+            drawEntities() {
+                const ctx = this.ctx;
+
+                // Sampah di Sungai
+                ctx.font = '30px serif';
+                ctx.textAlign = 'center';
+                ctx.textBaseline = 'middle';
+                for (const rt of this.riverTrash) {
+                    const bobY = rt.y + Math.sin(rt.bobPhase) * 4;
+                    ctx.fillText(rt.emoji, rt.x, bobY);
+                }
+
+                // Tentukan sampah terdepan sebagai indikator shortcut keyboard
+                const frontTrash = this.beltTrash.length > 0
+                    ? (this.selectedTrash || this.beltTrash.reduce((a, b) => (a.x > b.x ? a : b)))
+                    : null;
+
+                // Sampah di Conveyor Belt
+                for (const bt of this.beltTrash) {
+                    const drawX = bt.dragX ?? bt.x;
+                    const drawY = bt.dragY ?? bt.y;
+
+                    // Lingkaran alas sampah
+                    ctx.beginPath();
+                    ctx.arc(drawX, drawY, 26, 0, Math.PI * 2);
+                    ctx.fillStyle = bt === frontTrash ? 'rgba(52, 211, 153, 0.25)' : 'rgba(15, 23, 42, 0.75)';
+                    ctx.fill();
+                    ctx.lineWidth = bt === frontTrash ? 3 : 1.5;
+                    ctx.strokeStyle = bt === frontTrash ? '#34d399' : '#94a3b8';
+                    ctx.stroke();
+
+                    ctx.font = '30px serif';
+                    ctx.fillText(bt.emoji, drawX, drawY + 2);
+                }
+
+                // Partikel efek
+                for (const p of this.particles) {
+                    ctx.globalAlpha = Math.max(0, p.life * 1.8);
+                    ctx.fillStyle = p.color;
+                    ctx.beginPath();
+                    ctx.arc(p.x, p.y, 4, 0, Math.PI * 2);
+                    ctx.fill();
+                }
+                ctx.globalAlpha = 1;
+
+                // Teks poin melayang
+                ctx.font = 'bold 16px Plus Jakarta Sans, sans-serif';
+                for (const ft of this.floatingTexts) {
+                    ctx.globalAlpha = Math.max(0, ft.life);
+                    ctx.fillStyle = ft.color;
+                    ctx.fillText(ft.text, ft.x, ft.y);
+                }
+                ctx.globalAlpha = 1;
+                ctx.textAlign = 'left';
+                ctx.textBaseline = 'alphabetic';
+            }
+
+            loop(timestamp) {
+                if (!this.running) return;
+                const dt = Math.min((timestamp - this.lastTime) / 1000, 0.1);
+                this.lastTime = timestamp;
+
+                this.update(dt);
+                this.drawStaticScene();
+                this.drawEntities();
+
+                requestAnimationFrame((t) => this.loop(t));
+            }
+        }
+
+        // Inisialisasi Game saat halaman siap
+        window.addEventListener('DOMContentLoaded', () => {
+            new HydrosortGame('hydrosortCanvas');
+        });
+    </script>
+</body>
+</html>
